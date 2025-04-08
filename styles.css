@@ -20,3 +20,27 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
+.navbar {
+  width: 100%;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.nav-title {
+  color: var(--accent-color);
+  font-size: 20px;
+}
