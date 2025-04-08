@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #fdb20f;
+  --item-bg-color: rgba(255, 255, 255, 0.05);
+  --drag-handle-color: #666666;
+  --card-bg-color: #1a1a1a;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
