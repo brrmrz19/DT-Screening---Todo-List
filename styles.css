@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -10,6 +11,15 @@
   --item-bg-color: rgba(255, 255, 255, 0.05);
   --drag-handle-color: #666666;
   --card-bg-color: #1a1a1a;
+}
+
+[data-theme="light"] {
+  --background-color: #f5f5f5;
+  --text-color: #121212;
+  --accent-color: #fdb20f;
+  --item-bg-color: rgba(175, 113, 113, 0.05);
+  --drag-handle-color: #999999;
+  --card-bg-color: #ffffff;
 }
 
 body {
@@ -76,14 +86,13 @@ body {
   border-radius: 16px;
   padding: 30px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-  border-color: #000000;
-  border-style: solid;
 }
 
 h1 {
   text-align: center;
   color: var(--accent-color);
   font-size: 48px;
+  margin-bottom: 40px;
   letter-spacing: 2px;
 }
 
@@ -101,7 +110,108 @@ h1 {
   background-color: var(--item-bg-color);
   color: var(--text-color);
   font-size: 16px;
+  outline: none;
+}
 
-  border-color: #000000;
-  border-style: solid;
+#add-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: bold;
+  /* cursor: pointer; */
+  font-size: 16px;
+}
+
+#todo-list {
+  list-style-type: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--item-bg-color);
+  margin-bottom: 10px;
+  border-radius: 50px;
+  padding: 15px 20px;
+  position: relative;
+  /* cursor: grab; */
+}
+
+.check-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  margin-right: 15px;
+
+  /* cursor: pointer; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-button.completed {
+  background-color: var(--accent-color);
+}
+
+.check-button .material-icons {
+  color: var(--background-color);
+  font-size: 18px;
+  display: none;
+}
+
+.check-button.completed .material-icons {
+  display: block;
+}
+
+.todo-text {
+  font-size: 16px;
+  color: var(--text-color);
+  flex-grow: 1;
+}
+
+.completed .todo-text {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  color: #888888;
+
+  /* cursor: pointer; */
+
+  position: absolute;
+  right: 20px;
+}
+
+.delete-button .material-icons {
+  font-size: 20px;
+}
+
+.todo-item.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.drag-handle {
+  margin-right: 10px;
+
+  cursor: grab;
+
+  display: flex;
+  align-items: center;
+}
+
+.drag-handle .material-icons {
+  color: var(--drag-handle-color);
+  font-size: 20px;
 }
